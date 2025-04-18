@@ -4,6 +4,8 @@ function setSource(image, url) {
 }
 let titleImage = new Image(960, 540);
 setSource(titleImage, 'textures/title.png');
+let logoImage = new Image(960, 540);
+setSource(logoImage, 'textures/logo.png');
 let walkCycleAnimation = [];
 for (let i = 0; i < 8; i++) {
     let image = new Image(96, 243);
@@ -18,4 +20,4 @@ for (let i = 0; i < 8; i++) {
 let startButtonAnimation = [new Image(128, 64), new Image(128, 64)];
 setSource(startButtonAnimation[0], 'textures/start-button.png');
 setSource(startButtonAnimation[1], 'textures/start-button-clicked.png');
-export { titleImage, startButtonAnimation, walkCycleAnimation };
+export { titleImage, startButtonAnimation, walkCycleAnimation, logoImage };

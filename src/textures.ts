@@ -7,6 +7,9 @@ function setSource(image: HTMLImageElement, url: string) {
 let titleImage: HTMLImageElement = new Image(960, 540);
 setSource(titleImage, 'textures/title.png');
 
+let logoImage: HTMLImageElement = new Image(960, 540);
+setSource(logoImage, 'textures/logo.png');
+
 let walkCycleAnimation: HTMLImageElement[] = [];
 for (let i = 0; i < 8; i++) {
     let image: HTMLImageElement = new Image(96, 243);
@@ -23,4 +26,4 @@ let startButtonAnimation: HTMLImageElement[] = [new Image(128, 64), new Image(12
 setSource(startButtonAnimation[0], 'textures/start-button.png');
 setSource(startButtonAnimation[1], 'textures/start-button-clicked.png');
 
-export { titleImage, startButtonAnimation, walkCycleAnimation };
+export { titleImage, startButtonAnimation, walkCycleAnimation, logoImage };
