@@ -1,6 +1,6 @@
-import { TexturedRect } from "../components/texturedRect.js";
-import { Vector2 } from "../components/vector2.js";
-import { gameData } from "../util.js";
+import { TexturedRect } from "../components/TexturedRect.js";
+import { Vector2 } from "../components/Vector2.js";
+import { gameData } from "../Util.js";
 export class Player extends TexturedRect {
     constructor() {
         super();

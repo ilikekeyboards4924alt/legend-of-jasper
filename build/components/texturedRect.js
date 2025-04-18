@@ -1,4 +1,4 @@
-import { Rect } from "./rect.js";
+import { Rect } from "./Rect.js";
 export class TexturedRect extends Rect {
     constructor() {
         super();
