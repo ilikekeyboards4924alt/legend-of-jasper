@@ -44,7 +44,7 @@ function main() {
             gameData.state = 1;
     }
     if (gameData.state == 1) {
-        if (gameData.frameCounter > 60) {
+        if (gameData.frameCounter > 150) {
             button.visible = true;
         }
     }

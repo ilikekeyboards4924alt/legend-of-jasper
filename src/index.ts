@@ -1,12 +1,12 @@
-import { Renderer } from "./renderer.js";
-import { Controller } from "./controller.js";
-import { titleImage, startButtonAnimation, walkCycleAnimation } from "./textures.js";
-import { StartButton } from "./ui/startButton.js";
-import { gameData } from "./util.js";
-import { TexturedRect } from "./components/texturedRect.js";
-import { Player } from "./gameplay/player.js";
+import { Renderer } from "./Renderer.js";
+import { Controller } from "./Controller.js";
+import { titleImage, startButtonAnimation, walkCycleAnimation } from "./Textures.js";
+import { StartButton } from "./ui/StartButton.js";
+import { gameData } from "./Util.js";
+import { TexturedRect } from "./components/TexturedRect.js";
+import { Player } from "./gameplay/Player.js";
 
-import { titleScreenMusic } from "./audio.js";
+import { titleScreenMusic } from "./Audio.js";
 console.log(titleScreenMusic);
 
 let renderer: Renderer = new Renderer();
@@ -55,7 +55,7 @@ function main() {
     }
     
     if (gameData.state == 1) {
-        if (gameData.frameCounter > 60) {
+        if (gameData.frameCounter > 150) {
             button.visible = true;
         }
     }

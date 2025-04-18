@@ -1,4 +1,4 @@
-import { baseUrl } from "./util.js";
+import { baseUrl } from "./Util.js";
 
 function setSource(image: HTMLImageElement, url: string) {
     image.src = baseUrl + url;

@@ -1,5 +1,4 @@
 import { Rect } from "../components/rect.js";
-import { gameData } from "../util.js";
 import { TexturedRect } from "../components/texturedRect.js";
 export class Button extends TexturedRect {
     constructor() {
@@ -15,7 +14,6 @@ export class Button extends TexturedRect {
             this.beingClicked = true;
         }
         if (!mouse.lmb && !mouse.alreadyClicked && this.beingClicked) {
-            this.frameClicked = gameData.frameCounter;
             this.interact();
         }
         if (this.updateInteraction == true)

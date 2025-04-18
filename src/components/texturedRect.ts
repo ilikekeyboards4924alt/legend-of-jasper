@@ -1,5 +1,5 @@
-import { Renderer } from "../renderer.js";
-import { Rect } from "./rect.js";
+import { Renderer } from "../Renderer.js";
+import { Rect } from "./Rect.js";
 
 export class TexturedRect extends Rect {
     image: HTMLImageElement; // use for one static textures

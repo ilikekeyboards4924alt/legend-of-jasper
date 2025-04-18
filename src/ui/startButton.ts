@@ -1,17 +1,21 @@
-import { Button } from "./button.js";
-import { gameData } from "../util.js";
+import { Button } from "./Button.js";
+import { gameData } from "../Util.js";
 
 export class StartButton extends Button {
+    delay: number;
+
     constructor() {
         super();
+        this.delay = 30;
     }
 
     protected interact() {
+        if (!(gameData.frameCounter - this.frameClicked < this.delay)) this.frameClicked = gameData.frameCounter;
         this.updateInteraction = true;
     }
 
     protected interactionUpdate() {
-        if (gameData.frameCounter - this.frameClicked > 60) {
+        if (gameData.frameCounter - this.frameClicked > this.delay) {
             gameData.state = 2;
             this.updateInteraction = false;
             this.visible = false;
