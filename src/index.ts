@@ -50,8 +50,8 @@ function main() {
     
     if (gameData.state == 0) {
         if (gameData.frameCounter >= 0) titleCard.visible = true;
-        if (gameData.frameCounter > 60) titleCard.visible = false;
-        if (gameData.frameCounter > 120) gameData.state = 1;
+        if (gameData.frameCounter > 120) titleCard.visible = false;
+        if (gameData.frameCounter > 130) gameData.state = 1;
     }
     
     if (gameData.state == 1) {
