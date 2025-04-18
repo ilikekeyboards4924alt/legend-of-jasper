@@ -1,4 +1,4 @@
-import { baseUrl } from "./Util.js";
+import { baseUrl } from "./util.js";
 let titleScreenMusic = new Audio(baseUrl + 'audio/titleScreenMusic.mp3');
 document.addEventListener('click', event => {
     console.log(event);

@@ -1,5 +1,5 @@
-import { Rect } from "../components/Rect.js";
-import { TexturedRect } from "../components/TexturedRect.js";
+import { Rect } from "../components/rect.js";
+import { TexturedRect } from "../components/texturedrect.js";
 export class Button extends TexturedRect {
     constructor() {
         super();
