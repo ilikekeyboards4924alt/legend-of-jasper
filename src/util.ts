@@ -10,4 +10,6 @@ let gameData: GameData = {
     playerControlsActive: false
 };
 
-export { gameData };
+let baseUrl: string = './build/';
+
+export { gameData, baseUrl };

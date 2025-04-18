@@ -3,4 +3,5 @@ let gameData = {
     frameCounter: 0,
     playerControlsActive: false
 };
-export { gameData };
+let baseUrl = './build/';
+export { gameData, baseUrl };

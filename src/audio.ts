@@ -1,4 +1,6 @@
-let titleScreenMusic: HTMLAudioElement = new Audio('./audio/titleScreenMusic.mp3');
+import { baseUrl } from "./util.js";
+
+let titleScreenMusic: HTMLAudioElement = new Audio(baseUrl + 'audio/titleScreenMusic.mp3');
 document.addEventListener('click', event => {
     console.log(event);
     titleScreenMusic.play().then(_ => {

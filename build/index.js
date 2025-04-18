@@ -23,7 +23,7 @@ let button = new StartButton();
 button.init(renderer.canvas.width / 2 - 128 / 2, renderer.canvas.height / 2 - 128 / 2, 128, 64);
 button.initAnimation(startButtonAnimation);
 let player = new Player();
-player.init(0, 0, 96 * 3 / 3, 243 * 3 / 3);
+player.init(0, 0, 96 * 2 / 3, 243 * 2 / 3);
 player.initAnimation(walkCycleAnimation);
 function main() {
     renderer.ctx.fillRect(0, 0, renderer.canvas.width, renderer.canvas.height);

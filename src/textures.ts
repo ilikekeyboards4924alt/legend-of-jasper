@@ -1,24 +1,26 @@
-let titleImage: HTMLImageElement = new Image(960, 540);
-titleImage.src = './textures/title.png';
+import { baseUrl } from "./util.js";
 
-let playerAnimation: HTMLImageElement[] = [new Image(96, 243), new Image(96, 243)];
-playerAnimation[0].src = './textures/player-left.png';
-playerAnimation[1].src = './textures/player-right.png';
+function setSource(image: HTMLImageElement, url: string) {
+    image.src = baseUrl + url;
+}
+
+let titleImage: HTMLImageElement = new Image(960, 540);
+setSource(titleImage, 'textures/title.png');
 
 let walkCycleAnimation: HTMLImageElement[] = [];
 for (let i = 0; i < 8; i++) {
     let image: HTMLImageElement = new Image(96, 243);
-    image.src = `./textures/walkcycle/left/${i+1}.png`;
+    setSource(image, `textures/walkcycle/left/${i+1}.png`);
     walkCycleAnimation.push(image);
 }
 for (let i = 0; i < 8; i++) {
     let image: HTMLImageElement = new Image(96, 243);
-    image.src = `./textures/walkcycle/right/${i+1}.png`;
+    setSource(image, `textures/walkcycle/right/${i+1}.png`);
     walkCycleAnimation.push(image);
 }
 
 let startButtonAnimation: HTMLImageElement[] = [new Image(128, 64), new Image(128, 64)];
-startButtonAnimation[0].src = './textures/start-button.png';
-startButtonAnimation[1].src = './textures/start-button-clicked.png';
+setSource(startButtonAnimation[0], 'textures/start-button.png');
+setSource(startButtonAnimation[1], 'textures/start-button-clicked.png');
 
 export { titleImage, startButtonAnimation, walkCycleAnimation };
