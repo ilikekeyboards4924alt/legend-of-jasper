@@ -1,5 +1,5 @@
-import { Button } from "./Button.js";
-import { gameData } from "../Util.js";
+import { Button } from "./button.js";
+import { gameData } from "../util.js";
 
 export class StartButton extends Button {
     delay: number;

@@ -1,12 +1,12 @@
-import { Renderer } from "./Renderer.js";
-import { Controller } from "./Controller.js";
-import { titleImage, startButtonAnimation, walkCycleAnimation, logoImage } from "./Textures.js";
-import { StartButton } from "./ui/StartButton.js";
-import { gameData } from "./Util.js";
-import { TexturedRect } from "./components/TexturedRect.js";
-import { Player } from "./gameplay/Player.js";
+import { Renderer } from "./renderer.js";
+import { Controller } from "./controller.js";
+import { titleImage, startButtonAnimation, walkCycleAnimation, logoImage } from "./textures.js";
+import { StartButton } from "./ui/startbutton.js";
+import { gameData } from "./util.js";
+import { TexturedRect } from "./components/texturedrect.js";
+import { Player } from "./gameplay/player.js";
 
-import { titleScreenMusic } from "./Audio.js";
+import { titleScreenMusic } from "./audio.js";
 console.log(titleScreenMusic);
 
 let renderer: Renderer = new Renderer();

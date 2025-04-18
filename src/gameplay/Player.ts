@@ -1,7 +1,7 @@
-import { TexturedRect } from "../components/TexturedRect.js";
-import { Vector2 } from "../components/Vector2.js";
-import { Controller } from "../Controller.js";
-import { gameData } from "../Util.js";
+import { TexturedRect } from "../components/texturedrect.js";
+import { Vector2 } from "../components/vector2.js";
+import { Controller } from "../controller.js";
+import { gameData } from "../util.js";
 
 export class Player extends TexturedRect {
     vel: Vector2;

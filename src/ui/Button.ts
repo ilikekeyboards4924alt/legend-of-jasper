@@ -1,7 +1,7 @@
-import { Mouse } from "../Controller.js";
-import { Rect } from "../components/Rect.js";
-import { gameData } from "../Util.js";
-import { TexturedRect } from "../components/TexturedRect.js";
+import { Mouse } from "../controller.js";
+import { Rect } from "../components/rect.js";
+import { gameData } from "../util.js";
+import { TexturedRect } from "../components/texturedrect.js";
 
 export class Button extends TexturedRect {
     frameClicked: number;
