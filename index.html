@@ -5,12 +5,34 @@
     <style>
         body {
             font-family: sans-serif;
+            margin: 0px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .item {
+            /* border: 2px solid black; */
+        }
+
+        .canvasItem {
+            margin: auto;
+            display: none;
+            border: 2px solid black;
         }
     </style>
 </head>
 <body>
-    <h1>Click page to start game</h1>
-    <canvas></canvas>
+    <div class="container">
+        <h1 class="item">Click page to start game</h1>
+        <canvas class="canvasItem"></canvas>
+    </div>
+    
     <script src="./build/index.js" type="module"></script>
 </body>
 </html>

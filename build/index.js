@@ -65,6 +65,7 @@ let documentFocused = false;
 document.addEventListener('click', _ => {
     documentFocused = true;
     document.querySelector('h1').remove();
+    document.querySelector('canvas').style = 'display: flex; border: 2px solid black;';
 });
 setInterval(() => {
     if (documentFocused) {
