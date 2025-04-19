@@ -1,8 +1,8 @@
 import { Button } from "./button.js";
 import { gameData } from "../util.js";
 export class StartButton extends Button {
-    constructor() {
-        super();
+    constructor(x, y, w, h, imageOrAnimationFrames) {
+        super(x, y, w, h, imageOrAnimationFrames);
         this.delay = 30;
     }
     interact() {

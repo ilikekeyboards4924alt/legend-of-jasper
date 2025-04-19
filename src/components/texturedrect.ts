@@ -2,36 +2,37 @@ import { Renderer } from "../renderer.js";
 import { Rect } from "./rect.js";
 
 export class TexturedRect extends Rect {
-    image: HTMLImageElement; // use for one static textures
-    
-    animationFrames: HTMLImageElement[]; // use for animation
-    currentAnimationFrame: number;
-    currentAnimationFrameOffset: number; // offset by certain amount to get new animation set e.g. left vs right animations
+    image: HTMLImageElement; // use for one static texture
 
-    frameCounterLastFrame: number; // the frame count when the last animation frame was changed/displayed
+    animationFrames: HTMLImageElement[]; // use for animations
+    currentAnimationFrame: number; // current frame
+    currentAnimationFrameOffset: number; // offset by certain amount to get new animation set e.g. left vs right animations (is this the best way to switch between animations?)
+
+    frameCounterLastFrame: number; // the frame count when the last animation frame was changed/displayed, use this to get time between frames
 
     visible: boolean;
 
-    constructor() {
-        super();
-        this.visible = false;
+    constructor(x: number, y: number, w: number, h: number, imageOrAnimationFrames?: HTMLImageElement | HTMLImageElement[]) {
+        super(x, y, w, h);
+
+        if (Array.isArray(imageOrAnimationFrames)) { // hacky bs to overload the constructor
+            this.animationFrames = imageOrAnimationFrames;
+            this.image = undefined;
+        } else {
+            this.image = imageOrAnimationFrames;
+            this.animationFrames = undefined;
+        }
+
+        this.visible = false; // should i always start them invisible? should this.visible be protected?
         this.currentAnimationFrame = 0;
         this.currentAnimationFrameOffset = 0;
-    }
-
-    initTexture(image: HTMLImageElement) {
-        this.image = image;
-    }
-
-    initAnimation(animationFrames: HTMLImageElement[]) {
-        this.animationFrames = animationFrames;
     }
 
     protected animateUpdate() { // update animations n stuff here
         console.log('empty method');
     }
 
-    draw(renderer: Renderer) {
+    draw(renderer: Renderer) { // remove this when camera is implemented
         if (this.visible == false) return;
 
         if (this.animationFrames == undefined) {

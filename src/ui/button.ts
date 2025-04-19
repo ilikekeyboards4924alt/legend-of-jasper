@@ -8,15 +8,14 @@ export class Button extends TexturedRect {
     updateInteraction: boolean;
     beingClicked: boolean;
 
-    constructor() {
-        super();
+    constructor(x: number, y: number, w: number, h: number, imageOrAnimationFrames?: HTMLImageElement | HTMLImageElement[]) {
+        super(x, y, w, h, imageOrAnimationFrames);
     }
 
-    update(mouse: Mouse) {
+    update(mouse: Mouse) { // is this the best way to do this?
         if (this.visible == false) return;
 
-        let mouseRect: Rect = new Rect();
-        mouseRect.init(mouse.x, mouse.y, 1, 1);
+        let mouseRect: Rect = new Rect(mouse.x, mouse.y, 1, 1);
         if (this.collision(mouseRect) && mouse.lmb && !mouse.alreadyClicked) {
             mouse.alreadyClicked = true;
             this.beingClicked = true;
@@ -35,7 +34,7 @@ export class Button extends TexturedRect {
         console.log('empty method');
     }
 
-    protected interactionUpdate() { // put functionality in here if everything happens over MULTIPLE FRAMES
+    protected interactionUpdate() { // put functionality in here if everything happens over MULTIPLE FRAMES (should this just go in update?)
         console.log('empty method');
     }
 }

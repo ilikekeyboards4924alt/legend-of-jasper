@@ -1,14 +1,13 @@
 import { Rect } from "../components/rect.js";
 import { TexturedRect } from "../components/texturedrect.js";
 export class Button extends TexturedRect {
-    constructor() {
-        super();
+    constructor(x, y, w, h, imageOrAnimationFrames) {
+        super(x, y, w, h, imageOrAnimationFrames);
     }
     update(mouse) {
         if (this.visible == false)
             return;
-        let mouseRect = new Rect();
-        mouseRect.init(mouse.x, mouse.y, 1, 1);
+        let mouseRect = new Rect(mouse.x, mouse.y, 1, 1);
         if (this.collision(mouseRect) && mouse.lmb && !mouse.alreadyClicked) {
             mouse.alreadyClicked = true;
             this.beingClicked = true;

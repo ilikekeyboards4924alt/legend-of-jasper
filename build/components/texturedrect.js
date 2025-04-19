@@ -1,16 +1,18 @@
 import { Rect } from "./rect.js";
 export class TexturedRect extends Rect {
-    constructor() {
-        super();
-        this.visible = false;
+    constructor(x, y, w, h, imageOrAnimationFrames) {
+        super(x, y, w, h);
+        if (Array.isArray(imageOrAnimationFrames)) { // hacky bs to overload the constructor
+            this.animationFrames = imageOrAnimationFrames;
+            this.image = undefined;
+        }
+        else {
+            this.image = imageOrAnimationFrames;
+            this.animationFrames = undefined;
+        }
+        this.visible = false; // should i always start them invisible? should this.visible be protected?
         this.currentAnimationFrame = 0;
         this.currentAnimationFrameOffset = 0;
-    }
-    initTexture(image) {
-        this.image = image;
-    }
-    initAnimation(animationFrames) {
-        this.animationFrames = animationFrames;
     }
     animateUpdate() {
         console.log('empty method');

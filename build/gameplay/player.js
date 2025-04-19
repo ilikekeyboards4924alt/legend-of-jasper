@@ -2,19 +2,19 @@ import { TexturedRect } from "../components/texturedrect.js";
 import { Vector2 } from "../components/vector2.js";
 import { gameData } from "../util.js";
 export class Player extends TexturedRect {
-    constructor() {
-        super();
-        this.vel = new Vector2();
-        this.vel.init(0, 0);
+    constructor(x, y, w, h, imageOrAnimationFrames) {
+        super(x, y, w, h, imageOrAnimationFrames);
+        this.vel = new Vector2(0, 0);
+        this.direction = new Vector2(0, 0);
     }
     update() {
         if (this.vel.x < 0)
-            this.direction = 'left';
+            this.direction.x = -1;
         if (this.vel.x > 0)
-            this.direction = 'right';
-        if (this.direction == 'left')
+            this.direction.x = 1;
+        if (this.direction.x == -1)
             this.currentAnimationFrameOffset = 0;
-        if (this.direction == 'right')
+        if (this.direction.x == 1)
             this.currentAnimationFrameOffset = 8;
         this.animateUpdate();
     }

@@ -4,8 +4,8 @@ import { gameData } from "../util.js";
 export class StartButton extends Button {
     delay: number;
 
-    constructor() {
-        super();
+    constructor(x: number, y: number, w: number, h: number, imageOrAnimationFrames?: HTMLImageElement | HTMLImageElement[]) {
+        super(x, y, w, h, imageOrAnimationFrames);
         this.delay = 30;
     }
 

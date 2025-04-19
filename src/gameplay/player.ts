@@ -4,22 +4,21 @@ import { Controller } from "../controller.js";
 import { gameData } from "../util.js";
 
 export class Player extends TexturedRect {
+    direction: Vector2;
     vel: Vector2;
-    direction: string;
     
-    constructor() {
-        super();
-
-        this.vel = new Vector2();
-        this.vel.init(0,0);
+    constructor(x: number, y: number, w: number, h: number, imageOrAnimationFrames?: HTMLImageElement | HTMLImageElement[]) {
+        super(x, y, w, h, imageOrAnimationFrames);
+        this.vel = new Vector2(0, 0);
+        this.direction = new Vector2(0, 0);
     }
 
     update() {
-        if (this.vel.x < 0) this.direction = 'left';
-        if (this.vel.x > 0) this.direction = 'right';
+        if (this.vel.x < 0) this.direction.x = -1;
+        if (this.vel.x > 0) this.direction.x = 1;
 
-        if (this.direction == 'left') this.currentAnimationFrameOffset = 0;
-        if (this.direction == 'right') this.currentAnimationFrameOffset = 8;
+        if (this.direction.x == -1) this.currentAnimationFrameOffset = 0;
+        if (this.direction.x == 1) this.currentAnimationFrameOffset = 8;
     
         this.animateUpdate();
     }
