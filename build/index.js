@@ -63,8 +63,9 @@ function main() {
 }
 let documentFocused = false;
 document.addEventListener('click', _ => {
+    var _a;
     documentFocused = true;
-    document.querySelector('h1').remove();
+    (_a = document.getElementsByClassName('item')[0]) === null || _a === void 0 ? void 0 : _a.remove();
     document.querySelector('canvas').style = 'display: flex; border: 2px solid black;';
 });
 setInterval(() => {

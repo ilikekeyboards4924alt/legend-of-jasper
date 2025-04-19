@@ -1,7 +1,6 @@
 import { baseUrl } from "./util.js";
 let titleScreenMusic = new Audio(baseUrl + 'audio/titleScreenMusic.mp3');
 document.addEventListener('click', event => {
-    console.log(event);
     titleScreenMusic.play().then(_ => {
         titleScreenMusic.controls = true;
         titleScreenMusic.volume = 0.2;
