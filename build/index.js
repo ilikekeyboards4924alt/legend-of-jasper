@@ -11,6 +11,7 @@ let renderer = new Renderer();
 let controller = new Controller();
 renderer.canvas.width = 960;
 renderer.canvas.height = 540;
+// THIS IS SOME TEST STUFF TO SEE IF GIT IS WORKING CORRECTLY
 document.addEventListener('keydown', event => controller.keyHandler(event));
 document.addEventListener('keyup', event => controller.keyHandler(event));
 document.addEventListener('mousemove', event => controller.mouseMoveHandler(event, renderer.canvas));
