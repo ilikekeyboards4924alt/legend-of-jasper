@@ -26,4 +26,7 @@ let startButtonAnimation: HTMLImageElement[] = [new Image(128, 64), new Image(12
 setSource(startButtonAnimation[0], 'textures/start-button.png');
 setSource(startButtonAnimation[1], 'textures/start-button-clicked.png');
 
-export { titleImage, startButtonAnimation, walkCycleAnimation, logoImage };
+let signDecorImage: HTMLImageElement = new Image(102, 105);
+setSource(signDecorImage, 'textures/sign-decor.png')
+
+export { titleImage, startButtonAnimation, walkCycleAnimation, logoImage, signDecorImage };

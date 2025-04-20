@@ -20,4 +20,6 @@ for (let i = 0; i < 8; i++) {
 let startButtonAnimation = [new Image(128, 64), new Image(128, 64)];
 setSource(startButtonAnimation[0], 'textures/start-button.png');
 setSource(startButtonAnimation[1], 'textures/start-button-clicked.png');
-export { titleImage, startButtonAnimation, walkCycleAnimation, logoImage };
+let signDecorImage = new Image(102, 105);
+setSource(signDecorImage, 'textures/sign-decor.png');
+export { titleImage, startButtonAnimation, walkCycleAnimation, logoImage, signDecorImage };

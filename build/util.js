@@ -5,4 +5,7 @@ let gameData = {
     documentFocused: false
 };
 let baseUrl = './build/';
-export { gameData, baseUrl };
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+export { gameData, baseUrl, random };

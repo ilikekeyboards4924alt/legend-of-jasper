@@ -1,5 +1,5 @@
 import { titleScreenMusic } from "./audio.js";
-import { button, controller, logo, player, renderer, titleCard } from "./init.js";
+import { button, camera, controller, decors, logo, player, renderer, titleCard } from "./init.js";
 import { gameData } from "./util.js";
 
 export function run() {
@@ -7,35 +7,47 @@ export function run() {
     renderer.color(0,0,0);
     
     controller.update();
+
     
-    logo.draw(renderer);
-    titleCard.draw(renderer);
+    logo.draw(camera, false);
+    titleCard.draw(camera, false);
     
     button.update(controller.mouse);
-    button.draw(renderer)
+    button.draw(camera, false);
+    
+    decors.forEach(decor => {
+        decor.draw(camera);
+    });
 
     player.move(controller);
     player.update();
-    player.draw(renderer);
+    camera.center(player);
+    player.draw(camera);
+
     
     if (gameData.state == 0) {
         if (gameData.frameCounter >= 0) logo.visible = true;
-        if (gameData.frameCounter > 120) logo.visible = false;
-        if (gameData.frameCounter > 130) gameData.state = 1;
+        if (gameData.frameCounter > 20) logo.visible = false;
+        if (gameData.frameCounter > 30) gameData.state = 1;
     }
     
     if (gameData.state == 1) {
-        if (gameData.frameCounter > 150) {
+        if (gameData.frameCounter > 50) {
             titleCard.visible = true;
             button.visible = true;
         }
     }
-    
+
     if (gameData.state == 2) {
-        titleCard.visible = false;
-        renderer.color(100,100,255);
         gameData.playerControlsActive = true;
+
+        renderer.color(100,100,255);
+
+        titleCard.visible = false;
         player.visible = true;
+        decors.forEach(decor => {
+            decor.visible = true;
+        })
     }
 }
 

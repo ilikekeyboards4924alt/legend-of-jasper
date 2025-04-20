@@ -17,14 +17,16 @@ export class TexturedRect extends Rect {
     animateUpdate() {
         console.log('empty method');
     }
-    draw(renderer) {
+    draw(camera, offset = true) {
         if (this.visible == false)
             return;
         if (this.animationFrames == undefined) {
-            renderer.ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+            // camera.renderer.ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+            camera.drawImage(this.image, this, offset);
         }
         else {
-            renderer.ctx.drawImage(this.animationFrames[this.currentAnimationFrame + this.currentAnimationFrameOffset], this.x, this.y, this.w, this.h);
+            camera.drawImage(this.animationFrames[this.currentAnimationFrame + this.currentAnimationFrameOffset], this, offset);
+            // camera.renderer.ctx.drawImage(this.animationFrames[this.currentAnimationFrame + this.currentAnimationFrameOffset], this.x, this.y, this.w, this.h);
         }
     }
 }

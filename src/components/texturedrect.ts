@@ -1,3 +1,4 @@
+import { Camera } from "../gameplay/camera.js";
 import { Renderer } from "../renderer.js";
 import { Rect } from "./rect.js";
 
@@ -32,13 +33,15 @@ export class TexturedRect extends Rect {
         console.log('empty method');
     }
 
-    draw(renderer: Renderer) { // remove this when camera is implemented
+    draw(camera: Camera, offset: boolean = true) { // remove this when camera is implemented
         if (this.visible == false) return;
 
         if (this.animationFrames == undefined) {
-            renderer.ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+            // camera.renderer.ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+            camera.drawImage(this.image, this, offset);
         } else {
-            renderer.ctx.drawImage(this.animationFrames[this.currentAnimationFrame + this.currentAnimationFrameOffset], this.x, this.y, this.w, this.h);
+            camera.drawImage(this.animationFrames[this.currentAnimationFrame + this.currentAnimationFrameOffset], this, offset);
+            // camera.renderer.ctx.drawImage(this.animationFrames[this.currentAnimationFrame + this.currentAnimationFrameOffset], this.x, this.y, this.w, this.h);
         }
     }
 }
