@@ -7,6 +7,7 @@ import { Renderer } from "./renderer.js";
 import { logoImage, startButtonAnimation, titleImage, walkCycleAnimation, signDecorImage } from "./textures.js";
 import { StartButton } from "../ui/startbutton.js";
 import { random } from "./util.js";
+import { Background } from "../gameplay/background.js";
 let renderer = new Renderer();
 let controller = new Controller();
 renderer.canvas.width = 960;
@@ -21,9 +22,10 @@ for (let i = 0; i < 10; i++) {
     let decor = new Decor(random(-renderer.canvas.width, renderer.canvas.width * 2), random(-renderer.canvas.height, renderer.canvas.height * 2), 102, 105, signDecorImage);
     decors.push(decor);
 }
+let background = new Background(renderer);
 document.addEventListener('keydown', event => controller.keyHandler(event));
 document.addEventListener('keyup', event => controller.keyHandler(event));
 document.addEventListener('mousemove', event => controller.mouseMoveHandler(event, renderer.canvas));
 document.addEventListener('mousedown', event => controller.mouseButtonHandler(event));
 document.addEventListener('mouseup', event => controller.mouseButtonHandler(event));
-export { renderer, controller, camera, logo, titleCard, button, player, decors };
+export { renderer, controller, camera, logo, titleCard, button, player, decors, background };

@@ -5,6 +5,8 @@ import { Rect } from "./rect.js";
 export class TexturedRect extends Rect {
     image: HTMLImageElement; // use for one static texture
 
+    // ADD RECORDS FOR TEXTURE SETS, REMOVE ANIMATION FRAME OFFSETS
+
     animationFrames: HTMLImageElement[]; // use for animations
     currentAnimationFrame: number; // current frame
     currentAnimationFrameOffset: number; // offset by certain amount to get new animation set e.g. left vs right animations (is this the best way to switch between animations?)

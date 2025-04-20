@@ -11,11 +11,17 @@ export class Player extends TexturedRect {
         super(x, y, w, h, imageOrAnimationFrames);
         this.vel = new Vector2(0, 0);
         this.direction = new Vector2(0, 0);
+
+        // initialize player into idle animation
+        this.currentAnimationFrame = 0;
+        this.currentAnimationFrameOffset = 16;
     }
 
     update() {
         if (this.vel.x < 0) this.direction.x = -1;
         if (this.vel.x > 0) this.direction.x = 1;
+        if (this.vel.y < 0) this.direction.y = -1;
+        if (this.vel.y > 0) this.direction.y = 1;
 
         if (this.direction.x == -1) this.currentAnimationFrameOffset = 0;
         if (this.direction.x == 1) this.currentAnimationFrameOffset = 8;
@@ -25,13 +31,25 @@ export class Player extends TexturedRect {
 
     protected animateUpdate() {
         if (this.vel.x != 0 || this.vel.y != 0) {
+            if (this.currentAnimationFrameOffset == 16) this.currentAnimationFrameOffset = 0;
             if (this.frameCounterLastFrame == undefined) this.frameCounterLastFrame = gameData.frameCounter;
-            if (gameData.frameCounter - this.frameCounterLastFrame > 6) {
+            if (gameData.frameCounter - this.frameCounterLastFrame > 4) {
                 this.currentAnimationFrame = (this.currentAnimationFrame + 1)%8;
                 this.frameCounterLastFrame = gameData.frameCounter;
             }
         } else {
-            this.currentAnimationFrame = 0;
+            if (this.direction.x < 0) {
+                this.currentAnimationFrame = 0;
+                this.currentAnimationFrameOffset = 16;
+            }
+            if (this.direction.x > 0) {
+                this.currentAnimationFrameOffset = 16;
+                this.currentAnimationFrame = 1;
+            }
+            if (this.direction.y != 0 && this.direction.x == 0) {
+                this.currentAnimationFrame = 0;
+                this.currentAnimationFrameOffset = 16;
+            }
         }
     }
 
