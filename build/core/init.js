@@ -6,7 +6,7 @@ import { Player } from "../gameplay/player.js";
 import { Renderer } from "./renderer.js";
 import { logoImage, startButtonAnimation, titleImage, walkCycleAnimation, signDecorImage } from "./textures.js";
 import { StartButton } from "../ui/startbutton.js";
-import { random } from "./util.js";
+import { gameData, random } from "./util.js";
 import { Background } from "../gameplay/background.js";
 let renderer = new Renderer();
 let controller = new Controller();
@@ -52,6 +52,13 @@ function onTouch(evt) {
     }
     newEvt.initMouseEvent(type, true, true, document.defaultView, 0, touch.screenX, touch.screenY, touch.clientX, touch.clientY, evt.ctrlKey, evt.altKey, evt.shiftKey, evt.metaKey, 0, null);
     evt.target.dispatchEvent(newEvt);
+    let rect = renderer.canvas.getBoundingClientRect();
+    let touchX = Math.floor((touch.clientX - rect.left) / (rect.right - rect.left) * renderer.canvas.width);
+    let touchY = Math.floor((touch.clientY - rect.top) / (rect.bottom - rect.top) * renderer.canvas.height);
+    if (gameData.documentFocused) {
+        player.x -= renderer.canvas.width / 2 - touchX;
+        player.y -= renderer.canvas.height / 2 - touchY;
+    }
 }
 document.addEventListener('touchstart', event => onTouch(event));
 export { renderer, controller, camera, logo, titleCard, button, player, decors, background };
