@@ -3,7 +3,6 @@ import { background, button, camera, controller, decors, logo, player, renderer,
 import { gameData } from "./util.js";
 
 export function run() {
-    renderer.ctx.fillRect(0,0,renderer.canvas.width,renderer.canvas.height);
     renderer.color(0,0,0);
     
     controller.update();
