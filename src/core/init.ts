@@ -1,11 +1,11 @@
-import { TexturedRect } from "./components/texturedrect.js";
+import { TexturedRect } from "../components/texturedrect.js";
 import { Controller } from "./controller.js";
-import { Camera } from "./gameplay/camera.js";
-import { Decor } from "./gameplay/decor.js";
-import { Player } from "./gameplay/player.js";
+import { Camera } from "./camera.js";
+import { Decor } from "../gameplay/decor.js";
+import { Player } from "../gameplay/player.js";
 import { Renderer } from "./renderer.js";
 import { logoImage, startButtonAnimation, titleImage, walkCycleAnimation, signDecorImage } from "./textures.js";
-import { StartButton } from "./ui/startbutton.js";
+import { StartButton } from "../ui/startbutton.js";
 import { random } from "./util.js";
 
 let renderer: Renderer = new Renderer();

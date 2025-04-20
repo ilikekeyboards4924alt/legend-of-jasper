@@ -1,6 +1,6 @@
 import { TexturedRect } from "../components/texturedrect.js";
 import { Vector2 } from "../components/vector2.js";
-import { gameData } from "../util.js";
+import { gameData } from "../core/util.js";
 export class Player extends TexturedRect {
     constructor(x, y, w, h, imageOrAnimationFrames) {
         super(x, y, w, h, imageOrAnimationFrames);

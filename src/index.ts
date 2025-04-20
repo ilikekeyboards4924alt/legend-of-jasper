@@ -1,5 +1,5 @@
-import { gameData } from "./util.js";
-import { run } from "./engine.js";
+import { gameData } from "./core/util.js";
+import { run } from "./core/engine.js";
 
 function main() {
     run();

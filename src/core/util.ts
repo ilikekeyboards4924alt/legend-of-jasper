@@ -18,4 +18,8 @@ function random(min: number, max: number) {
     return Math.floor(Math.random()*(max - min) + min);
 }
 
-export { gameData, baseUrl, random };
+function lerp(value: number, targetValue: number) {
+    return value + (targetValue - value)*0.1;
+}
+
+export { gameData, baseUrl, random, lerp };

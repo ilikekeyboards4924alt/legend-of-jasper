@@ -1,5 +1,5 @@
-import { Camera } from "../gameplay/camera.js";
-import { Renderer } from "../renderer.js";
+import { Camera } from "../core/camera";
+import { Renderer } from "../core/renderer.js";
 import { Rect } from "./rect.js";
 
 export class TexturedRect extends Rect {

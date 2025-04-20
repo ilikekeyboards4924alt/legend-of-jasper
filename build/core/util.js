@@ -8,4 +8,7 @@ let baseUrl = './build/';
 function random(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
-export { gameData, baseUrl, random };
+function lerp(value, targetValue) {
+    return value + (targetValue - value) * 0.1;
+}
+export { gameData, baseUrl, random, lerp };

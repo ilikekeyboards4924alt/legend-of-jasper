@@ -1,6 +1,6 @@
-import { Mouse } from "../controller.js";
+import { Mouse } from "../core/controller.js";
 import { Rect } from "../components/rect.js";
-import { gameData } from "../util.js";
+import { gameData } from "../core/util.js";
 import { TexturedRect } from "../components/texturedrect.js";
 
 export class Button extends TexturedRect {

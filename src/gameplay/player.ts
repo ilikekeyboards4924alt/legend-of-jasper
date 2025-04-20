@@ -1,7 +1,7 @@
 import { TexturedRect } from "../components/texturedrect.js";
 import { Vector2 } from "../components/vector2.js";
-import { Controller } from "../controller.js";
-import { gameData } from "../util.js";
+import { Controller } from "../core/controller.js";
+import { gameData } from "../core/util.js";
 
 export class Player extends TexturedRect {
     direction: Vector2;

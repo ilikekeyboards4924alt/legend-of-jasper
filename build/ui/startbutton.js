@@ -1,5 +1,5 @@
 import { Button } from "./button.js";
-import { gameData } from "../util.js";
+import { gameData } from "../core/util.js";
 export class StartButton extends Button {
     constructor(x, y, w, h, imageOrAnimationFrames) {
         super(x, y, w, h, imageOrAnimationFrames);
