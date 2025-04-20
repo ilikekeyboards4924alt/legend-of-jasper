@@ -29,7 +29,7 @@ document.addEventListener('mousemove', event => controller.mouseMoveHandler(even
 document.addEventListener('mousedown', event => controller.mouseButtonHandler(event));
 document.addEventListener('mouseup', event => controller.mouseButtonHandler(event));
 function onTouch(evt) {
-    evt.preventDefault();
+    // evt.preventDefault();
     if (evt.touches.length > 1 ||
         (evt.type === "touchend" && evt.touches.length > 0))
         return;
@@ -53,4 +53,5 @@ function onTouch(evt) {
     newEvt.initMouseEvent(type, true, true, document.defaultView, 0, touch.screenX, touch.screenY, touch.clientX, touch.clientY, evt.ctrlKey, evt.altKey, evt.shiftKey, evt.metaKey, 0, null);
     evt.target.dispatchEvent(newEvt);
 }
+document.addEventListener('touchstart', event => onTouch(event));
 export { renderer, controller, camera, logo, titleCard, button, player, decors, background };
