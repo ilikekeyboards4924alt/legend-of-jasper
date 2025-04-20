@@ -27,7 +27,6 @@ for (let i = 0; i < 8; i++) {
     setSource(image, 'textures/walkcycle/right/idle.png');
     walkCycleAnimation.push(image);
 })();
-console.log(walkCycleAnimation.length);
 let startButtonAnimation = [new Image(128, 64), new Image(128, 64)];
 setSource(startButtonAnimation[0], 'textures/start-button.png');
 setSource(startButtonAnimation[1], 'textures/start-button-clicked.png');
