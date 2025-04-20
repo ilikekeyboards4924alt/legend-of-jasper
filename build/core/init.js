@@ -28,4 +28,29 @@ document.addEventListener('keyup', event => controller.keyHandler(event));
 document.addEventListener('mousemove', event => controller.mouseMoveHandler(event, renderer.canvas));
 document.addEventListener('mousedown', event => controller.mouseButtonHandler(event));
 document.addEventListener('mouseup', event => controller.mouseButtonHandler(event));
+function onTouch(evt) {
+    evt.preventDefault();
+    if (evt.touches.length > 1 ||
+        (evt.type === "touchend" && evt.touches.length > 0))
+        return;
+    const newEvt = document.createEvent("MouseEvents");
+    let type = null;
+    let touch = null;
+    switch (evt.type) {
+        case "touchstart":
+            type = "mousedown";
+            touch = evt.changedTouches[0];
+            break;
+        case "touchmove":
+            type = "mousemove";
+            touch = evt.changedTouches[0];
+            break;
+        case "touchend":
+            type = "mouseup";
+            touch = evt.changedTouches[0];
+            break;
+    }
+    newEvt.initMouseEvent(type, true, true, document.defaultView, 0, touch.screenX, touch.screenY, touch.clientX, touch.clientY, evt.ctrlKey, evt.altKey, evt.shiftKey, evt.metaKey, 0, null);
+    evt.target.dispatchEvent(newEvt);
+}
 export { renderer, controller, camera, logo, titleCard, button, player, decors, background };

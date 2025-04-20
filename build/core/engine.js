@@ -36,9 +36,7 @@ export function run() {
         renderer.color(100, 100, 255);
         titleCard.visible = false;
         player.visible = true;
-        decors.forEach(decor => {
-            decor.visible = true;
-        });
+        decors.forEach(decor => decor.visible = true);
         background.sections.forEach(row => {
             row.forEach(section => {
                 section.visible = true;
